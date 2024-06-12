@@ -13,9 +13,11 @@ export default function App() {
     <div className='content'>
     <div className='forms'>
       <form className='personal-details form-section'>
+        <div className='form-header'>
         <img src={personalImg} alt="Personal" />
         <h2>Personal Details</h2>
-        <div>
+        </div>
+        <div className='form-group'>
           <div className='input-group'>
             <label htmlFor="full-name">
               <span className='label-text'>Full Name</span>
@@ -57,7 +59,7 @@ export default function App() {
     </div>
     <div className='page'></div>
     </div>
-    <footer></footer>
+    <footer>Copyright &copy; 2024 Reshpack</footer>
     </>
   )
 }
