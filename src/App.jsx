@@ -90,6 +90,7 @@ export default function App() {
             </label>
             <input type="text" id='location' placeholder='City, Country' />
           </div>
+          <button></button>
         </div>
         </form>
       <form className='work-details form-section'>
@@ -134,6 +135,7 @@ export default function App() {
             </label>
             <input type="text" id='location' placeholder='City, Country' />
           </div>
+          <button></button>
         </div>
         </form>
     </div>
