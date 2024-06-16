@@ -7,6 +7,17 @@ import workImg from './assets/work.png'
 
 export default function App() {
 
+  // form buttons hidden
+  const [educationVisible, setEducationVisible] = useState(false);
+  const [workVisible, setWorkVisible] = useState(false);
+
+  const toggleEducation = () => {
+    setEducationVisible(!educationVisible);
+  };
+
+  const toggleWork = () => {
+    setWorkVisible(!workVisible);
+  };
 
   return (
     <>
@@ -55,11 +66,11 @@ export default function App() {
         </div>
       </form>
       <form className='education-details form-section'>
-        <div className='form-header clickable'>
+        <div className={`form-header clickable`} onClick={toggleEducation}>
         <img src={educationImg} alt="Education" />
         <h2>Education</h2>
         </div>
-        <div className='form-group visible'>
+        <div className={`form-group ${educationVisible ? 'visible' : 'animate'}`}>
           <div className='input-group'>
             <label htmlFor="school-name">
               <span className='label-text'>School</span>
@@ -90,15 +101,15 @@ export default function App() {
             </label>
             <input type="text" id='location' placeholder='City, Country' />
           </div>
-          <button></button>
+          <button className='btn'>Add</button>
         </div>
         </form>
       <form className='work-details form-section'>
-      <div className='form-header clickable'>
+      <div className={`form-header clickable`} onClick={toggleWork}>
         <img src={workImg} alt="Work" />
         <h2>Work Experience</h2>
         </div>
-        <div className='form-group visible'>
+        <div className={`form-group ${workVisible ? 'visible' : 'animate'}`}>
           <div className='input-group'>
             <label htmlFor="company-name">
               <span className='label-text'>Company Name</span>
@@ -135,7 +146,7 @@ export default function App() {
             </label>
             <input type="text" id='location' placeholder='City, Country' />
           </div>
-          <button></button>
+          <button className='btn'>Add</button>
         </div>
         </form>
     </div>
