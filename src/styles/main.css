@@ -168,6 +168,7 @@ input, textarea {
   font-weight: bold;
   font-size: 16px;
   transition: all 0.3s;
+  box-shadow: var(--box-shadow);
 }
 
 .dl-btn:hover {
@@ -188,7 +189,6 @@ input, textarea {
   max-width: 600px;
   max-height: 850px;
   background-color: #f9f9f9;
-  box-shadow: var(--box-shadow);
   transition: margin-left 0.3s ease;
 }
 
@@ -196,6 +196,13 @@ input, textarea {
   .page {
     margin-left: 0;
     max-width: calc(100% - 50px);
+  }
+}
+
+
+@media (max-width: 600px) {
+  .page {
+    box-shadow: none; 
   }
 }
 
@@ -262,6 +269,14 @@ h3 {
 .description {
   margin-top: 10px;
   margin-bottom: 0;
+}
+
+.description-page {
+  margin-top: 10px;
+}
+
+.description-text {
+  font-size: 12px;
 }
 
 /* experience */
