@@ -6,6 +6,8 @@
   --text-input: #ECECEC;
   --btn-before: #1CACF4;
   --btn-after: #0484CC;
+  --download-btn1: #22c55e;
+  --download-btn2: #4ade80;
 }
 
 html, body, #root {
@@ -26,30 +28,36 @@ html, body, #root {
   width: 100%;
   display: flex;
   box-shadow: var(--box-shadow);
+  align-items: center;
 }
 
 .header-title {
   padding: 0.1rem 3rem;
   color: var(--primary-white);
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .content {
   display: flex;
   width: 90%;
   margin: 20px 0;
+  justify-content: center;
 }
 
+/* form */
 .forms {
   flex: 1;
-  margin-right: 200px;
+  margin-right: 100px;
   max-width: 500px;
   transition: margin-right 0.3s ease;
 }
 
 @media (max-width: 768px) {
   .forms {
-    margin-right: 50px; 
-    max-width: calc(100% - 50px); 
+    margin-right: 50px;
+    max-width: calc(100% - 50px);
   }
 }
 
@@ -76,22 +84,26 @@ img {
 
 .form-group {
   background-color: var(--primary-white);
-  margin-top: 1rem;
-  padding: 20px;
+  margin-top: 10px; /* Adjusted */
+  padding: 10px; /* Adjusted */
   border-radius: 10px;
   box-shadow: var(--box-shadow);
+  transition: max-height 0.3s ease, opacity 0.3s ease;
 }
 
 .form-group.animate {
   max-height: 0;
   opacity: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease, opacity 0.3s ease;
+  padding: 0; /* Remove padding when hidden */
+  margin-bottom: 0; /* Remove margin-bottom when hidden */
 }
 
 .form-group.visible {
   max-height: 500px; /* Adjust to fit your content height */
   opacity: 1;
+  padding: 20px; /* Add padding back when visible */
+  margin-bottom: 20px; /* Add margin-bottom back when visible */
 }
 
 .form-section {
@@ -118,10 +130,11 @@ input, textarea {
   min-height: 20px;
   max-height: 200px;
   max-width: calc(100% - 20px);
-  resize: vertical; 
-  overflow: auto; 
+  resize: vertical;
+  overflow: auto;
 }
 
+/* Buttons */
 .btn {
   width: 100%;
   padding: 5px 0;
@@ -139,9 +152,33 @@ input, textarea {
 }
 
 .btn:active {
-  transform: translateY(2px); 
+  transform: translateY(2px);
 }
 
+.dl-btn {
+  width: 100%;
+  border: none;
+  background: var(--download-btn2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  transition: all 0.3s;
+}
+
+.dl-btn:hover {
+  background: var(--download-btn1);
+}
+
+.dl-btn:active {
+  transform: translateY(5px);
+}
+
+/* Resume page */
 .page {
   flex: 2;
   padding: 20px;
@@ -157,9 +194,115 @@ input, textarea {
 
 @media (max-width: 768px) {
   .page {
-    margin-left: 0; 
-    max-width: calc(100% - 50px); 
+    margin-left: 0;
+    max-width: calc(100% - 50px);
   }
+}
+
+.full-name {
+  margin-bottom: 10px;
+  margin-top: 0;
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+}
+
+.personal-info {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.personal-info p, .personal-info span {
+  margin: 0;
+}
+
+h3 {
+  margin-bottom: 10px; /* Adjusted */
+}
+
+/* education part */
+.education-text {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  font-size: 12px;
+}
+
+.education-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.education-header .left {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+}
+
+.education-header .right {
+  text-align: right;
+  font-weight: bold;
+}
+
+.school-name,
+.degree-title {
+  margin: 0;
+}
+
+.location,
+.dates {
+  margin: 0;
+}
+
+.description {
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+/* experience */
+.experience-text {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  font-size: 12px;
+}
+
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.experience-header .left {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+}
+
+.experience-header .right {
+  text-align: right;
+  font-weight: bold;
+}
+
+.company-name,
+.position-title {
+  margin: 0;
+}
+
+.location,
+.dates {
+  margin: 0;
+}
+
+.description {
+  margin-top: 10px;
+  margin-bottom: 0;
 }
 
 footer {

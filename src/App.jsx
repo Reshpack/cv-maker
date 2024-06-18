@@ -3,6 +3,8 @@ import './styles/main.css'
 import personalImg from './assets/person.png';
 import educationImg from './assets/education.png'
 import workImg from './assets/work.png'
+import downloadIcon from './assets/download.svg'
+import headerIcon from './assets/headerIcon.svg'
 
 
 export default function App() {
@@ -22,7 +24,7 @@ export default function App() {
   return (
     <>
     <header className='header'>
-    <h1 className="header-title">SP CV Maker</h1>
+    <h1 className="header-title"><img className='header-icon' src={headerIcon} alt="" />SP CV Maker</h1>
     </header>
 
     <div className='content'>
@@ -149,8 +151,55 @@ export default function App() {
           <button className='btn'>Add</button>
         </div>
         </form>
+        <button className='dl-btn'><img src={downloadIcon} />Download</button>
     </div>
-    <div className='page'></div>
+    <div className='page'>
+      <h1 className='full-name'>Full Name</h1>
+      <div className='personal-info'>
+          <p>Email</p>
+          <span>|</span>
+          <p>Phone Number</p>
+          <span>|</span>
+          <p>Address</p>
+      </div>
+      <div className='description-page'>
+        <span className='description-text'></span>
+      </div>
+      <h3>Education</h3>
+      <hr />
+      <div className='education-text'>
+            <div className='education-header'>
+                <div className='left'>
+                    <p className='school-name'>School</p>
+                    <p className='degree-title'>Qualification</p>
+                </div>
+                <div className='right'>
+                    <p className='location'>Location</p>
+                    <p className='dates'>Start Date - End Date</p>
+                </div>
+            </div>
+            <p className='description'>
+                Description of the role and responsibilities goes here. It can be multiple lines long.
+            </p>
+        </div>
+      <h3>Experience</h3>
+      <hr />
+      <div className='experience-text'>
+            <div className='experience-header'>
+                <div className='left'>
+                    <p className='company-name'>Company Name</p>
+                    <p className='position-title'>Position Title</p>
+                </div>
+                <div className='right'>
+                    <p className='location'>Location</p>
+                    <p className='dates'>Start Date - End Date</p>
+                </div>
+            </div>
+            <p className='description'>
+                Description of the role and responsibilities goes here. It can be multiple lines long.
+            </p>
+        </div>
+    </div>
     </div>
     <footer>Copyright &copy; 2024 Reshpack</footer>
     </>
