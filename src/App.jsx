@@ -67,7 +67,7 @@ const App = () => {
           <DownloadButton />
         </div>
         <ResumePage
-          id="resume-content" // Ensure this ID is added to the content wrapper
+          id="resume-content" 
           personalDetails={personalDetails}
           educations={educations}
           experiences={experiences}
